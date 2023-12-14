@@ -1,10 +1,14 @@
-console.log('Initial the server')
+console.log('Initial the server');
 const express = require('express');
-console.log('The express module loadaed.')
+console.log('The express module loadaed.');
 const mongoose = require('mongoose');
-console.log('The mongosse module loadaed.')
-const app = express()
-console.log('Server is created.')
+console.log('The mongosse module loadaed.');
+const cors = require('cors');
+console.log('The cors module loaded.');
+const app = express();
+console.log('Server is created.');
+app.use(cors());
+console.log('Cors modul used.');
 const connectMongoose = async () => {
     const mongoDB = "mongodb+srv://softtech-api-admin:ctzroP0PLbRIu9Q4@softtech-api.8iucbhh.mongodb.net/entertainments";
     try {
@@ -17,7 +21,7 @@ const connectMongoose = async () => {
     catch {
         console.log('Something is wrong in connectMongoose function');
     }
-}
+};
 connectMongoose()
 .catch((error) => {
     console.log(error);
@@ -28,7 +32,7 @@ const cinemaSchema = new mongoose.Schema({
     latitude: String,
 });
 const Cinema = mongoose.model('cinemas', cinemaSchema);
-console.log('Schema is defined.')
+console.log('Schema is defined.');
 const getDatas = async () => {
     try {
         let data = []
@@ -45,22 +49,22 @@ const getDatas = async () => {
         .catch((error) => {
             console.log(error);
         })
-        return data
+        return data;
     }
     catch {
         console.log("Something is wrong in getUserDataFromMongoose function");
     }
-}
+};
 app.get("/api/longitude_and_latitude", async (request, response) => {
     console.log('Request arrived.')
     try {
-        response.send(await getDatas())
+        response.send(await getDatas());
     }
     catch {
-        console.log('Something is wrong with the get')
+        console.log('Something is wrong with the get');
     }
-})
+});
 app.listen(3123, () => {
-    console.log('Server is started.')
-    console.log('Listening on the http://localhost:3123')
-})
+    console.log('Server is started.');
+    console.log('Listening on the http://localhost:3123');
+});
