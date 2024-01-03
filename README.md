@@ -1,40 +1,48 @@
-Sofwaretech and Architecture
+**Software Techniques and Architectures**
 University of Sopron
 
-This app show a MAP like google map and showing the cinema places and some data if somebody click on the marker.
 
-The instalation is simple first you run the backend:
+This app shows a Map of Sopron.
+On the map you can find cinemas in this area, indicated with a marker. and you can find the cinema places and some data if somebody click on the marker.
+If you click any of these markers, you will get some data about the cinema.
+
+**Install**
+
+The installation is simple, first you have to run the backend server:
 C:\>node ./backend/serverAPI.js
 
-You wait some secound to run the server. If the server has started then you can run the web app with the following commands:
+After some seconds the server will be UP.
+When the server has started, you can run the web-app with the following commands:
 
-C:\>cd ./frontend
-C:\>npm start
+C:\> cd ./frontend
+C:\> npm start
 
-And you are done. The server is run now! Good Job
+DONE. The web-app with the server in the back is running now!
 
-And some technical datas:
 
-The backend is an express server written by node.js
+**Technical details**
 
-The backend call Mongoose API becouse the Mongose has the DataBase with cinema datas.
-The mongo DB (database) structure has collections like json structure.
+The backend is an express server written with node.js.
 
-Backend used modules:
+The backend calls the Mongoose API because the Mongoose has the Database with the cinema datas.
+The MongoDB database structure has collections like .json structure.
+
+Backend modules:
 - Mongoose
 - Express
 - Cors
 
-The Web app has written by React-App
-So it use HTML, CSS, JavaScript, JSX.
-And some other modules:
-- react-leaflet
-- react
+The web-app has written in React-App.
+Therefore it use HTML, CSS, JavaScript, JSX.
 
-How to install first time?
+Some other modules:
+- React-leaflet
+- React
 
-C:\>cd backend
-C:\>npm init
-C:\>npm install express mongoose cors
-C:\>cd ../frontend
-C:\>npm install
+First time installation:
+
+C:\> cd backend
+C:\> npm init
+C:\> npm install express mongoose cors
+C:\> cd ../frontend
+C:\> npm install
